@@ -5,8 +5,8 @@ import Logo from '../assests/logo.svg';
 import { Button } from '../components/Button';
 import { useAuth } from '../hooks/useAuth'
 
-export function SigIn() {
-  const{ signIn, user }= useAuth();
+export function SignIn() {
+  const{ signIn, isUserLoading }= useAuth();
 
   return (
     <Center flex={1} bgColor= "green.500" p={7}>
@@ -18,6 +18,8 @@ export function SigIn() {
          leftIcon={<Icon as={Fontisto} name="google" color="white" size="md" />}
          mt={12}
          onPress={ signIn }
+         isLoading={isUserLoading}
+         _loading={{_spinner: { color: 'white '}}}
       />
       <Text color="white" textAlign="center" px={3} mt={4}>
         Não utilizamos nenhuma informação além 

@@ -4,8 +4,8 @@ import {useFonts, Roboto_400Regular, Roboto_500Medium, Roboto_700Bold } from '@e
 
 import { AuthContextProvider } from './src/contexts/AuthContext';
 
+import { Routes } from './src/routes';
 import { Loading } from './src/components/Loading';
-import { SigIn } from './src/screens/SignIn';
 
 import {THEME} from './src/styles/theme';
 
@@ -21,7 +21,7 @@ export default function App() {
         backgroundColor={"transparent"}
         translucent
       />
-      { fontsLoaded ? <SigIn /> : <Loading /> }
+      { fontsLoaded ? <Routes /> : <Loading /> }
       </AuthContextProvider>
     </NativeBaseProvider>
   );
